@@ -31,41 +31,38 @@ My first task is to visualize an earthquake data set.
 
    * I included popups that provide additional information about the earthquake when a marker is clicked.
 
-   * I create a legend that will provide context for your map data.
+   * I created a legend that will provide context for your map data.
 
-
+   ![LEGEND](Images/Legend.PNG)
 - - -
 
-### Level 2: More Data (Optional)
+### Level 2: More Data (Tectonic Plates Data)
 
 ![5-Advanced](Images/5-Advanced.png)
 
-The USGS wants you to plot a second data set on your map to illustrate the relationship between tectonic plates and seismic activity. You will need to pull in a second data set and visualize it along side your original set of data. Data on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
+The USGS wanted me to plot a second data set on my map to illustrate the relationship between tectonic plates and seismic activity. I pulled in a second data set from <https://github.com/fraxen/tectonicplates> and visualize it along side my original set of data. 
 
-In this step we are going to..
+In this step :
 
-* Plot a second data set on our map.
+* I plotted  a second data set on our map.
 
-* Add a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off independently.
-
-* Add layer controls to our map.
+* I added a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off independently.
 
 - - -
 
-### Assessment
 
-Your final product will be assessed on the following metrics:
+### Level 3: More Data , More Layer And More Challenges 
 
-* Completion of assigned tasks
+While I was doing this Project I put myself in more challenges again. I saw the plots are overlapping each other and they are not clear for the users. So, I decided to to categorize my data base on "Magnitudes".
 
-* Visual appearance
+In this Step:
 
-* Professionalism
+* I separated out the Earthquake data sets into overlays based on "Magnitudes". 
+* The overlays can be turned on and off independently as well as the "tectonic plates" data set is available too.
 
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
+![Final_challenges](Images/Leaflet Step-3.gif)
 
-**Good luck!**
+![Final_challenges](Images/Leaflet Step-3.mp4)
 
-### Copyright
+### Hope you Enjoy it
 
-Trilogy Education Services © 2019. All Rights Reserved.
