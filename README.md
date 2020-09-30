@@ -66,7 +66,6 @@ In this Step:
 
 ![Final_challenges](Images/LeafletStep3.gif)
 
-![Final_challenges](Images/LeafletStep3.mp4)
 
 The final project can be viewed at :<https://nima-karimii.github.io/leaflet-challenge/>
 ### Hope you Enjoy it
