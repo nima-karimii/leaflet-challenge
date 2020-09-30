@@ -2,8 +2,6 @@
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 var PlatesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json"
 
-
-
 function ColorSelector (Depth)
 { var Color="";
 if (Depth<10) Color="lightgreen";
@@ -56,18 +54,7 @@ function createFeatures(earthquakeData) {
  // Check for location property
  
      if (location) {
- 
-//// Marker ////////
 
-// cityCircles.push(
-//   L.marker([location.coordinates[1], location.coordinates[0]])
-//     .bindPopup(earthquakeData[i].properties.place+"<hr>Magnitudes = "+magnitudes+"<br>Depth = "+Depth)
-// );
-
-//////////////////
-
-
-/////Circle//////
 
        // Add a circle markers to the map and bind a pop-up
        cityCircles.push(L.circleMarker([location.coordinates[1], location.coordinates[0]],
@@ -78,10 +65,11 @@ function createFeatures(earthquakeData) {
            "weight": 0.5,
            "opacity": 1
          })
-         .bindPopup(earthquakeData[i].properties.place+"<hr>Magnitudes = "+magnitudes+"<br>Depth = "+Depth)
-       );
+         .bindPopup(earthquakeData[i].properties.place+
+          "<hr>Time = "+ (new Date(earthquakeData[i].properties.time)).toLocaleString()+
+          "<br>Magnitudes = "+magnitudes+
+          "<br>Depth = "+Depth)       );
 
-////////////////////
      }
     console.log(location.coordinates[0],location.coordinates[1],location.coordinates[2]);
 
@@ -94,7 +82,7 @@ function createMap(cityCircles_layer,Plates) {
 
   console.log(cityCircles_layer);
 
-  // Define streetmap and darkmap layers
+  // Define The Maps layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
@@ -141,8 +129,8 @@ function createMap(cityCircles_layer,Plates) {
 
   // Create our map, giving it the satellite Map and earthquakes layers to display on load
   var myMap = L.map("map", {
-    center: [39.3999, -8.2245],
-    zoom: 2,
+    center:  [36.7783, -119.4179],
+    zoom: 3,
     layers: [satMap, cityCircles_layer]
   });
 
@@ -152,4 +140,27 @@ function createMap(cityCircles_layer,Plates) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
+
+// Set up the legend
+var legend = L.control({ position: "bottomright" });
+  
+legend.onAdd = function() { var div = L.DomUtil.create('div', 'info legend')
+      
+div.innerHTML = "<table style= 'background-color: white'><tr><td colspan='2' ><h3>&nbsp;&nbsp;Depth </h3></td></tr>"+
+                "<tr><td><10</td><td style= 'background-color: lightgreen'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>"+
+                "<tr><td>10-30</td><td style= 'background-color: yellow'></td></tr>"+
+                "<tr><td>30-50</td><td style= 'background-color: gold'></td></tr>"+
+                "<tr><td>50-70</td><td style= 'background-color: darkorange'></td></tr>"+
+                "<tr><td>70-90</td><td style= 'background-color: Red'></td></tr>"+
+                "<tr><td>>90</td><td style= 'background-color: darkred'></td></tr>"+
+                "</table>";
+
+return div;
+};
+
+legend.addTo(myMap);
+
+
+
+
 }

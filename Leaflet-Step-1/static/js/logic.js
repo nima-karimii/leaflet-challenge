@@ -33,7 +33,7 @@ return (Color);
 // Grab the data with d3
 d3.json(URL, function(response) {
 
-  // console.log(response)
+  console.log(response)
 
   // Loop through data
   for (var i = 0; i < response.features.length; i++) {
@@ -63,7 +63,10 @@ d3.json(URL, function(response) {
           "weight": 0.5,
           "opacity": 1
         })
-        .bindPopup(response.features[i].properties.place+"<hr>Magnitudes = "+magnitudes+"<br>Depth = "+Depth)
+        .bindPopup(response.features[i].properties.place+
+                  "<hr>Time = "+ (new Date(Feature.properties.time)).toLocaleString()+
+                  "<br>Magnitudes = "+magnitudes+
+                  "<br>Depth = "+Depth)
         .addTo(myMap)
     }
 
