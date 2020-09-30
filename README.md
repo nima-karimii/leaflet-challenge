@@ -1,8 +1,9 @@
 # Leaflet Homework - Visualizing Data with Leaflet
 
-## Background
 
 ![1-Logo](Images/1-Logo.png)
+
+## Background
 
 Welcome to the United States Geological Survey, or USGS for short! The USGS is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment; and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes. As a new hire, you will be helping them out with an exciting new project!
 
@@ -12,14 +13,15 @@ The USGS is interested in building a new set of tools that will allow them visua
 
 ![2-BasicMap](Images/2-BasicMap.png)
 
-My first task is to visualize an earthquake data set.
+My first task was to visualize an earthquake data set.
 
-1. **Get your data set**
+1. **Getting the data set**
 
    ![3-Data](Images/3-Data.png)
 
-   The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) .
-   I picked up 'All Earthquakes from the Past 7 Days', I was given a JSON representation of that data. I used the URL of this JSON to pull in the data for our visualization.
+   The USGS provides earthquake data in a number of different formats, updated every 5 minutes. 
+   [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) .
+   I picked up 'All Earthquakes Data from the Past 7 Days'. I was given a JSON representation of that data by link and then I used the URL of this JSON to pull in the data for our visualization.
 
    ![4-JSON](Images/4-JSON.png)
 
@@ -31,7 +33,9 @@ My first task is to visualize an earthquake data set.
 
    * I included popups that provide additional information about the earthquake when a marker is clicked.
 
-   * I created a legend that will provide context for your map data.
+![LEGEND](Images/Poupups.PNG)
+
+   * I created a legend that will provide context for my map data.
 
    ![LEGEND](Images/Legend.PNG)
 - - -
@@ -44,9 +48,9 @@ The USGS wanted me to plot a second data set on my map to illustrate the relatio
 
 In this step :
 
-* I plotted  a second data set on our map.
+* I plotted  a second data set on my map.
 
-* I added a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off independently.
+* I added a number of base maps to choose from as well as separate out my two different data sets into overlays that can be turned on and off independently.
 
 - - -
 
@@ -60,9 +64,10 @@ In this Step:
 * I separated out the Earthquake data sets into overlays based on "Magnitudes". 
 * The overlays can be turned on and off independently as well as the "tectonic plates" data set is available too.
 
-![Final_challenges](Images/Leaflet Step-3.gif)
+![Final_challenges](Images/LeafletStep3.gif)
 
-![Final_challenges](Images/Leaflet Step-3.mp4)
+![Final_challenges](Images/LeafletStep3.mp4)
 
+The final project can be viewed at :<https://nima-karimii.github.io/leaflet-challenge/>
 ### Hope you Enjoy it
 
