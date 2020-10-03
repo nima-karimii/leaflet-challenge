@@ -181,7 +181,24 @@ d3.json(PlatesURL, function(response) {
   }).addTo(Plates);
 });
 
+// Set up the legend
+var legend = L.control({ position: "bottomright" });
+  
+legend.onAdd = function() { var div = L.DomUtil.create('div', 'info legend')
+      
+div.innerHTML = "<table style= 'background-color: white'><tr><td colspan='2' ><h3>&nbsp;&nbsp;Depth </h3></td></tr>"+
+                "<tr><td><10</td><td style= 'background-color: lightgreen'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>"+
+                "<tr><td>10-30</td><td style= 'background-color: yellow'></td></tr>"+
+                "<tr><td>30-50</td><td style= 'background-color: gold'></td></tr>"+
+                "<tr><td>50-70</td><td style= 'background-color: darkorange'></td></tr>"+
+                "<tr><td>70-90</td><td style= 'background-color: Red'></td></tr>"+
+                "<tr><td>>90</td><td style= 'background-color: darkred'></td></tr>"+
+                "</table>";
 
+return div;
+};
+
+legend.addTo(myMap);
 
 
 });
